@@ -125,9 +125,9 @@
 		Arquivo: <input type="file" name="foto"/>
 		
 		
-		<input type="radio" value="teste">
+		<input type="radio" name="autorizacao" value="<%= autorizacao %>" />
 		<label>Sim</label>
-		<input type="radio" value="teste">
+		<input type="radio" name="autorizacao"  value="<%= autorizacao %>" />
 		<label>Não</label>
 		<input type="submit" value="Enviar">
 
