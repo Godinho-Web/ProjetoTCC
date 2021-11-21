@@ -114,6 +114,10 @@
 		<input type="text" name="titulo" value="<%= titulo %>" />
 		</br>
 		
+		Resumo:
+		<input type="text" name="titulo" value="<%= resumo %>" />
+		</br>
+		
 		Palavras Chave(3-5):
 		<input type="text" name="pchave" value="<%= palavras_chaves %>" />
 		</br>
