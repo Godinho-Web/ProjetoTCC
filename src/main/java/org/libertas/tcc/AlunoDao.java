@@ -17,7 +17,7 @@ public class AlunoDao {
 			ps.setString(1, a.getNome());
 			ps.setString(2, a.getEmail());
 			ps.setInt(3, a.getId_curso());
-			ps.setInt(1, a.getRA());
+			ps.setInt(4, a.getRA());
 			ps.execute();
 			
 			con.getConexao().close();
@@ -39,8 +39,8 @@ public class AlunoDao {
 			PreparedStatement ps = con.getConexao().prepareStatement(sql);
 			ps.setString(1, a.getNome());
 			ps.setString(2, a.getEmail());
-			ps.setInt(1, a.getId_curso());
-			ps.setInt(1, a.getRA());
+			ps.setInt(3, a.getId_curso());
+			ps.setInt(4, a.getRA());
 			ps.execute();
 			
 			con.getConexao();
