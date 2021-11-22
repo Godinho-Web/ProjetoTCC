@@ -12,7 +12,7 @@
 <meta charset="ISO-8859-1">
 <title>Formulario de Submissão</title>
 </head>
-<body>
+<body style="background-color: green">
 	<h1>Formulario de Submissão</h1>
 	
 	<%
