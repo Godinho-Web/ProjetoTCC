@@ -12,8 +12,8 @@
 <meta charset="ISO-8859-1">
 <title>Formulario de Submissão</title>
 </head>
-<body style="background-color: green">
-	<div style="background-color: white; text-align: center; border-radius: 20px">
+<body style="background-color: #25702F">
+	<div style="background-color: #E4E4E4; text-align: center; border-radius: 20px">
 		<h1>Formulario de Submissão</h1>
 	</div>
 	<%
@@ -50,7 +50,7 @@
 		
 	
 	%>
-<div style="background-color: white; text-align: center; border-radius: 20px">	
+<div style="background-color: #E4E4E4; text-align: center; border-radius: 20px">	
 <form action="EnviarArquivo" enctype="multipart/form-data" method="post">
 		<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
 		<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
