@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class AlunoDao {
-	public void inserir(Aluno a) {
+	public int inserir(Aluno a) {
 		try {
 			Conexao con = new Conexao();
 			String sql = "INSERT INTO Aluno "
@@ -20,10 +20,20 @@ public class AlunoDao {
 			ps.setInt(4, a.getRA());
 			ps.execute();
 			
+			int id_aluno = 0;
+			sql = "SELECT LAST_INSERT_ID() AS id_aluno";
+			Statement instrucao = con.getConexao().createStatement();
+			ResultSet res = instrucao.executeQuery(sql);
+			if (res.next()) {
+				id_aluno =  res.getInt("id_aluno");
+			} 
+			
 			con.getConexao().close();
+			return id_aluno;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			return 0;
 		}
 		
 		// TERMINANDO METODO ENSINANDO AUTOR LUIZ 18/11/2021
@@ -41,6 +51,7 @@ public class AlunoDao {
 			ps.setString(2, a.getEmail());
 			ps.setInt(3, a.getId_curso());
 			ps.setInt(4, a.getRA());
+			ps.setInt(5, a.getId_aluno());
 			ps.execute();
 			
 			con.getConexao();
@@ -76,6 +87,31 @@ public class AlunoDao {
 		try {
 			Conexao con = new Conexao();
 			String sql = "SELECT * FROM Aluno WHERE id_aluno= " + id_aluno;
+			Statement instrucao = con.getConexao().createStatement();
+			ResultSet res =  instrucao.executeQuery(sql);
+			if (res.next()) {
+				a.setNome(res.getString("nome"));
+				a.setEmail(res.getString("email"));
+				a.setId_curso(res.getInt("id_curso"));
+				a.setRA(res.getInt("RA"));
+				a.setId_aluno(res.getInt("id_aluno"));
+				
+			}
+			res.close();
+			
+			con.getConexao().close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return a;  //  FIM DO METODO CONSULTAR - LUIZ 18/11/2021
+	}
+	
+	public Aluno consultar_ra(int RA) {
+		Aluno a = new Aluno();
+		
+		try {
+			Conexao con = new Conexao();
+			String sql = "SELECT * FROM Aluno WHERE RA= " + RA;
 			Statement instrucao = con.getConexao().createStatement();
 			ResultSet res =  instrucao.executeQuery(sql);
 			if (res.next()) {

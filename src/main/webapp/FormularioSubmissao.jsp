@@ -52,8 +52,9 @@
 	
 	
 	%>
-<form action="ConfirmaSubmissao" enctype="multipart/form-data" method="post">
+<form action="EnviarArquivo" enctype="multipart/form-data" method="post">
 		<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
+		<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
 		Nome:
 		<input type="text" name="nome" value="<%= nome %>" />
 		</br>
@@ -115,7 +116,7 @@
 		</br>
 		
 		Resumo:
-		<input type="text" name="titulo" value="<%= resumo %>" />
+		<input type="text" name="resumo" value="<%= resumo %>" />
 		</br>
 		
 		Palavras Chave(3-5):
@@ -124,15 +125,15 @@
 		
 		Arquivo: <input type="file" name="foto"/>
 		
-		
+		<br>
 		<input type="radio" name="autorizacao" value="<%= autorizacao %>" />
 		<label>Sim</label>
+		
 		<input type="radio" name="autorizacao"  value="<%= autorizacao %>" />
 		<label>Não</label>
 		<input type="submit" value="Enviar">
 
 
 </form>
-
 </body>
 </html>

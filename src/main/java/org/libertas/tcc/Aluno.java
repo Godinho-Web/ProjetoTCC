@@ -35,8 +35,8 @@ public class Aluno {
 	public int getRA() {
 		return RA;
 	}
-	public void setRA(int rA) {
-		RA = rA;
+	public void setRA(int ra) {
+		this.RA = ra;
 	}
 	
 	

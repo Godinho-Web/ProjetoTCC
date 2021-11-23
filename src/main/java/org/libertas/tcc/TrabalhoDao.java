@@ -12,7 +12,7 @@ public class TrabalhoDao {
 		try {
 			Conexao con = new Conexao();
 			String sql = "INSERT INTO Trabalho "
-					+ "(Titulo,Resumo,Palavras_chaves,Arquivo,Data,Validacao,Autorizacao,id_aluno_,id_professor,id_curso)"
+					+ "(Titulo,Resumo,Palavras_chaves,Arquivo,Data,Validacao,Autorizacao,id_aluno,id_professor,id_curso)"
 					+ " VALUES "
 					+ "(?,?,?,?,?,?,?,?,?,?)";
 			
@@ -126,7 +126,7 @@ public class TrabalhoDao {
 				Trabalho t = new Trabalho();
 				t.setTitulo(res.getString("titulo"));
 				t.setResumo(res.getString("resumo"));
-				t.setPalavras_chaves(res.getString("palavras_chaves"));
+				t.setPalavras_chaves(res.getString("pchave"));
 				t.setArquivo(res.getString("arquivo"));
 				t.setData(res.getString("data"));
 				t.setValidacao(res.getString("validacao"));
