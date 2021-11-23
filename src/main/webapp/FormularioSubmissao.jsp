@@ -50,6 +50,7 @@
 		
 	
 	%>
+<div style="background-color: white; text-align: center; border-radius: 20px">	
 <form action="EnviarArquivo" enctype="multipart/form-data" method="post">
 		<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
 		<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
@@ -133,5 +134,6 @@
 
 
 </form>
+</div>
 </body>
 </html>
