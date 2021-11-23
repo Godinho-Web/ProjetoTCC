@@ -13,8 +13,9 @@
 <title>Formulario de Submissão</title>
 </head>
 <body style="background-color: green">
-	<h1>Formulario de Submissão</h1>
-	
+	<div style="background-color: white; text-align: center; border-radius: 20px">
+		<h1>Formulario de Submissão</h1>
+	</div>
 	<%
 		String nome="";
 		String email="";
@@ -47,9 +48,6 @@
 			id_curso = t.getId_curso();
 		}
 		
-		
-	
-	
 	
 	%>
 <form action="EnviarArquivo" enctype="multipart/form-data" method="post">
