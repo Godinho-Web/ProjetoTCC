@@ -57,7 +57,7 @@
 		<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
 		<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
 		<label for="exampleFormControlInput1" class="form-label">Nome:</label>
-		<input type="text" name="nome" value="<%= nome %>" class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+		<input type="text" name="nome" value="<%= nome %>" class="form-control" type="text" placeholder="Nome" aria-label="default input example" />
 		</br>
 		
 		RA:
