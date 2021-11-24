@@ -126,7 +126,7 @@ public class TrabalhoDao {
 				Trabalho t = new Trabalho();
 				t.setTitulo(res.getString("titulo"));
 				t.setResumo(res.getString("resumo"));
-				t.setPalavras_chaves(res.getString("pchave"));
+				t.setPalavras_chaves(res.getString("Palavras_chaves"));
 				t.setArquivo(res.getString("arquivo"));
 				t.setData(res.getString("data"));
 				t.setValidacao(res.getString("validacao"));

@@ -3,6 +3,9 @@ package org.libertas.tcc;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
+
 
 public class AlunoDao {
 	public int inserir(Aluno a) {
@@ -128,7 +131,34 @@ public class AlunoDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return a;  //  FIM DO METODO CONSULTAR - LUIZ 18/11/2021
+		return a;  //  FIM DO METODO CONSULTAR ra - LUIZ 18/11/2021
+	}
+	
+	public List<Aluno> listar(){
+		List<Aluno> dados = new LinkedList<Aluno>();
+		try {
+			Conexao con = new Conexao();
+			String sql = "SELECT * FROM Aluno ORDER BY Nome";
+			Statement instrucao = con.getConexao().createStatement();
+			ResultSet res = instrucao.executeQuery(sql);
+			while (res.next()) {
+				Aluno a = new Aluno();
+				a.setNome(res.getString("nome"));
+				a.setEmail(res.getString("email"));
+				a.setId_curso(res.getInt("id_curso"));
+				a.setRA(res.getInt("RA"));
+				a.setId_aluno(res.getInt("id_aluno"));
+				dados.add(a);
+			}
+			
+			res.close();
+			con.getConexao().close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dados;
+		
+		// TERMINO DO METODO QUE LISTA TODOS OS Alunos
 	}
 
 }

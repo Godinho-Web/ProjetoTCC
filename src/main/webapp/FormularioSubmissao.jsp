@@ -11,6 +11,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Formulario de Submissão</title>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="css/all.min.css"/>
 </head>
 <body style="background-color: #25702F">
 	<div style="background-color: #E4E4E4; text-align: center; border-radius: 20px">
@@ -54,16 +56,16 @@
 <form action="EnviarArquivo" enctype="multipart/form-data" method="post">
 		<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
 		<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
-		Nome:
-		<input type="text" name="nome" value="<%= nome %>" />
+		<label for="exampleFormControlInput1" class="form-label">Nome:</label>
+		<input type="text" name="nome" value="<%= nome %>" class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
 		</br>
 		
 		RA:
-		<input type="text" name="ra" value="<%= RA %>" />
+		<input type="text" name="ra" value="<%= RA %>" for="exampleFormControlInput1" class="form-label"/>
 		</br>
 		
 		Email:
-		<input type="text" name="email" value="<%= email %>"/>
+		<input type="text" name="email" value="<%= email %>" for="exampleFormControlInput1" class="form-label"/>
 		</br>
 		
 		Professor:
@@ -111,15 +113,15 @@
 		</br>
 		
 		Titulo:
-		<input type="text" name="titulo" value="<%= titulo %>" />
+		<input type="text" name="titulo" value="<%= titulo %>" for="exampleFormControlInput1" class="form-label"/>
 		</br>
 		
 		Resumo:
-		<input type="text" name="resumo" value="<%= resumo %>" />
+		<input type="text" name="resumo" value="<%= resumo %>" for="exampleFormControlInput1" class="form-label"/>
 		</br>
 		
 		Palavras Chave(3-5):
-		<input type="text" name="pchave" value="<%= palavras_chaves %>" />
+		<input type="text" name="pchave" value="<%= palavras_chaves %>" for="exampleFormControlInput1" class="form-label"/>
 		</br>
 		
 		Arquivo: <input type="file" name="foto"/>
@@ -135,5 +137,6 @@
 
 </form>
 </div>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
