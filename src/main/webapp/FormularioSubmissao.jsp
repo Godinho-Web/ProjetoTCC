@@ -14,10 +14,12 @@
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
 </head>
+
 <body style="background-color: #25702F">
-	<div style="background-color: #E4E4E4; text-align: center; border-radius: 20px">
+	<div style="background-color: #E4E4E4; text-align: center;border-radius: 8px">
 		<h1>Formulario de Submissão</h1>
 	</div>
+	
 	<%
 		String nome="";
 		String email="";
@@ -52,91 +54,102 @@
 		
 	
 	%>
-<div style="background-color: #E4E4E4; text-align: center; border-radius: 20px">	
-<form action="EnviarArquivo" enctype="multipart/form-data" method="post">
-		<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
-		<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
-		<label for="exampleFormControlInput1" class="form-label">Nome:</label>
-		<input type="text" name="nome" value="<%= nome %>" class="form-control" type="text" placeholder="Nome" aria-label="default input example" />
-		</br>
-		
-		RA:
-		<input type="text" name="ra" value="<%= RA %>" for="exampleFormControlInput1" class="form-label"/>
-		</br>
-		
-		Email:
-		<input type="text" name="email" value="<%= email %>" for="exampleFormControlInput1" class="form-label"/>
-		</br>
-		
-		Professor:
-		<select name="id_professor">
-			<%
-				ProfessorDao pdao = new ProfessorDao();
-				for (Professor p: pdao.listar()){
-					String sel = "";
-					if (p.equals(sel)){
-						sel = " SELECTED ";
-					}
-					out.print("<option value="+p.getId_professor()+sel+">");
-					out.print(p.getNome() + "/" + p.getId_professor());
-					out.print("</option>");
+	
+	<div style="background-color: #E4E4E4;border-radius: 8px">	
+	
+		<form action="EnviarArquivo" enctype="multipart/form-data" method="post">
+				<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
+				<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
+				<label for="exampleFormControlInput1" class="form-label">Nome:</label>
+				<input type="text" name="nome" value="<%= nome %>" class="form-control" type="text" placeholder="Nome" aria-label="default input example" />
+				</br>
 				
-			}
-			
-			
-			%>
-		
-		
-		</select>
-		</br>
-		
-		Curso:
-		<select name="id_curso">
-			<%
-				CursoDao cdao = new CursoDao();
-				for (Curso c: cdao.listar()){
-					String sel = "";
-					if (c.equals(sel)){
-						sel = " SELECTED ";
-					}
-					out.print("<option value="+c.getId_curso()+sel+">");
-					out.print(c.getNome() + "/" + c.getId_curso());
-					out.print("</option>");
+				RA:
+				<input type="text" name="ra" value="<%= RA %>"class="form-control" type="text" placeholder="RA" aria-label="default input example"/>
+				</br>
 				
-			}
+				Email:
+				<input type="text" name="email" value="<%= email %>"class="form-control" type="text" placeholder="E-mail" aria-label="default input example"/>
+				</br>
+				
+				Professor:
+				<select name="id_professor" class="form-select" aria-label="Default select example">
+					<%
+						ProfessorDao pdao = new ProfessorDao();
+						for (Professor p: pdao.listar()){
+							String sel = "";
+							if (p.equals(sel)){
+								sel = " SELECTED ";
+							}
+							out.print("<option value="+p.getId_professor()+sel+">");
+							out.print(p.getNome() + "/" + p.getId_professor());
+							out.print("</option>");
+						
+					}
+					
+					
+					%>
+				
+				
+				</select>
+				</br>
+				
+				Curso:
+				<select name="id_curso" class="form-select" aria-label="Default select example">
+					<%
+						CursoDao cdao = new CursoDao();
+						for (Curso c: cdao.listar()){
+							String sel = "";
+							if (c.equals(sel)){
+								sel = " SELECTED ";
+							}
+							out.print("<option value="+c.getId_curso()+sel+">");
+							out.print(c.getNome() + "/" + c.getId_curso());
+							out.print("</option>");
+						
+					}
+					
+					
+					%>
+				
+				
+				</select>
+				</br>
+				Titulo:
+				<input type="text" name="titulo" value="<%= titulo %>"class="form-control" type="text" placeholder="Titulo" aria-label="default input example"/>
+				</br>
+				
+				Resumo:
+				<input type="text" name="resumo" value="<%= resumo %>"class="form-control" type="text" placeholder="Resumo" aria-label="default input example"/>
+				</br>
+				
+				Palavras Chave(3-5):
+				<input type="text" name="pchave" value="<%= palavras_chaves %>"class="form-control" type="text" placeholder="Palavras Chave" aria-label="default input example"/>
+				</br>
+				
+				Arquivo: <input type="file" name="foto"/>
+				
+				</br>
+				Na qualidade de titular dos direitos de autor(a) da publicação, de acordo com a Lei n° 9610/98, 
+				autorizo a Libertas - Faculdades Integradas a disponibilizar em formato impresso e eletrônico no 
+				repositório de trabalhos acadêmicos da instituição (na internet), para fins de consulta, leitura, 
+				impressão e/ou download individual a titulo de divulgação científica, o texto integral da obra acima citada, 
+				sem responsabilidade do ressarcimento de direitos autorais e sem pagamento de quaisquer direitos autorais patrimoniais 
+				por parte da Libertas - Faculdades Integradas. 
+				</br>
+				<input type="radio" name="autorizacao" value="<%= autorizacao %>" />
+				<label>Sim</label>
+				
+				<input type="radio" name="autorizacao"  value="<%= autorizacao %>" />
+				<label>Não</label>
+				</br>
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+					<input type="submit" class="btn btn-outline-success" value="Enviar">
+					<input type="submit" class="btn btn-outline-info" value="Voltar ">
+					
+		</form>
 			
-			
-			%>
-		
-		
-		</select>
-		</br>
-		
-		Titulo:
-		<input type="text" name="titulo" value="<%= titulo %>" for="exampleFormControlInput1" class="form-label"/>
-		</br>
-		
-		Resumo:
-		<input type="text" name="resumo" value="<%= resumo %>" for="exampleFormControlInput1" class="form-label"/>
-		</br>
-		
-		Palavras Chave(3-5):
-		<input type="text" name="pchave" value="<%= palavras_chaves %>" for="exampleFormControlInput1" class="form-label"/>
-		</br>
-		
-		Arquivo: <input type="file" name="foto"/>
-		
-		<br>
-		<input type="radio" name="autorizacao" value="<%= autorizacao %>" />
-		<label>Sim</label>
-		
-		<input type="radio" name="autorizacao"  value="<%= autorizacao %>" />
-		<label>Não</label>
-		<input type="submit" value="Enviar">
-
-
-</form>
-</div>
+	</div>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
