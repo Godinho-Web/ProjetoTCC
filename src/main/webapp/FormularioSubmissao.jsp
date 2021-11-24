@@ -126,16 +126,20 @@
 		
 		Arquivo: <input type="file" name="foto"/>
 		
-		<br>
+		</br>
 		<input type="radio" name="autorizacao" value="<%= autorizacao %>" />
 		<label>Sim</label>
 		
 		<input type="radio" name="autorizacao"  value="<%= autorizacao %>" />
 		<label>Não</label>
+		</br>
 		<input type="submit" value="Enviar">
+		<a href="index.jsp"><input type="button" value="Voltar"></a>
 
 
 </form>
+
+		
 </div>
 <script src="js/bootstrap.min.js"></script>
 </body>
