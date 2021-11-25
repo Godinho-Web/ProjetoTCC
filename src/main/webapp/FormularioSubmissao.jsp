@@ -16,7 +16,7 @@
 </head>
 
 <body style="background-color: #25702F">
-	<div style="background-color: #E4E4E4; text-align: center;border-radius: 8px">
+	<div style="background-color: #E4E4E4; width:500px ;text-align: center;border-radius: 8px">
 		<h1>Formulario de Submissão</h1>
 	</div>
 	
@@ -124,13 +124,13 @@
 					<input type="text" name="titulo" value="<%= titulo %>"class="form-control" type="text" placeholder="Titulo" aria-label="default input example"/>
 					</br>
 					
+					Palavras Chave(3-5):
+					<input type="text" name="pchave" value="<%= palavras_chaves %>"class="form-control" type="text" placeholder="Palavras Chave" aria-label="default input example"/>
+					</br>
 					Resumo:
 					<input type="text" name="resumo" value="<%= resumo %>"class="form-control" type="text" placeholder="Resumo" aria-label="default input example"/>
 					</br>
 					
-					Palavras Chave(3-5):
-					<input type="text" name="pchave" value="<%= palavras_chaves %>"class="form-control" type="text" placeholder="Palavras Chave" aria-label="default input example"/>
-					</br>
 					<div>
 						Arquivo: <input type="file" name="foto"/>
 					</div>
