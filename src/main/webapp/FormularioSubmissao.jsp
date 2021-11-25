@@ -13,12 +13,44 @@
 <title>Formulario de Submissão</title>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
+	<div style="background-color: blue">
+	<nav class="navbar navbar-light bg-light">
+		  <div class="container-fluid">
+		    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+		      <div class="offcanvas-header">
+		        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+		        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		      </div>
+		      <div class="offcanvas-body">
+		        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+		          <li class="nav-item">
+		            <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link" href="FormularioSubmissao.jsp">Admin</a>
+		          </li>
+		     
+		      </div>
+		    </div>
+		  </div>
+		</nav>
+	
+	
+	</div>
+
 </head>
 
 <body style="background-color: #25702F">
-	<div style="background-color: #E4E4E4; width:500px ;text-align: center;border-radius: 8px">
-		<h1>Formulario de Submissão</h1>
-	</div>
+<br><br>
+	<h1 style="background-color: #E4E4E4; border-radius: 5px; text-align: center; width: 1140px;
+		 margin-left: auto; margin-right: auto" class="container">Formulario de Submissão</h1>
+	
 	
 	<%
 		String nome="";
