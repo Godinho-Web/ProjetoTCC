@@ -13,9 +13,11 @@
 <title>Formulario de Submissão</title>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
-	<div style="background-color: blue">
+</head>
 	<nav class="navbar navbar-light bg-light">
 		  <div class="container-fluid">
+		  	<h1>Trabalho de Conclusao de Curso</h1>
+		    
 		    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -42,10 +44,6 @@
 		</nav>
 	
 	
-	</div>
-
-</head>
-
 <body style="background-color: #25702F">
 <br><br>
 	<h1 style="background-color: #E4E4E4; border-radius: 5px; text-align: center; width: 1140px;
