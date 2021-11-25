@@ -145,8 +145,8 @@
 				</br>
 				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 					<input type="submit" class="btn btn-outline-success" value="Enviar">
-					<input type="submit" class="btn btn-outline-info" value="Voltar ">
-					
+					<input type="submit" class="btn btn-outline-info"  value="Voltar "> <a href>index.jsp</a>
+				</div>
 		</form>
 			
 	</div>
