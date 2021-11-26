@@ -13,38 +13,41 @@
 <title>Formulario de Submissão</title>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
-
-</head>	
-	<nav class="navbar navbar-light bg-#25702F">
-		  <div class="container-fluid" style="background-color: #25702F">
-		  	<img src="logo_libertas_integradas_topo.png" width="300px" height="200px">
-		    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-		      <span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-		      <div class="offcanvas-header">
-		        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-		        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-		      </div>
-		      <div class="offcanvas-body">
-		        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-		          <li class="nav-item">
-		            <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
-		          </li>
-		          <li class="nav-item">
-		            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
-		          </li>
-		          <li class="nav-item">
-		            <a class="nav-link" href="FormularioSubmissao.jsp">Admin</a>
-		          </li>
-		     
-		      </div>
-		    </div>
-		  </div>
-		</nav>
+</head>
 	
 <body style="background-color: #25702F">
-<br><br>
+<header>
+		<div style="display: flex; height: 200px; background-color: #25702F">
+			<img src="logo_libertas_integradas_topo.png" width="300px" height="200px">
+			
+			<nav class="navbar navbar-light bg-#25702F">
+				  <div class="container-fluid" style="background-color: #25702F">
+				    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+				      <span class="navbar-toggler-icon"></span>
+				    </button>
+				    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+				      <div class="offcanvas-header">
+				        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+				        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				      </div>
+				      <div class="offcanvas-body">
+				        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+				          <li class="nav-item">
+				            <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
+				          </li>
+				          <li class="nav-item">
+				            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
+				          </li>
+				          <li class="nav-item">
+				            <a class="nav-link" href="FormularioSubmissao.jsp">Admin</a>
+				          </li>
+				     
+				      </div>
+				    </div>
+				  </div>
+				</nav>
+		</div>
+	</header>	
 	<h1 style="background-color: #E4E4E4; border-radius: 5px; text-align: center; width: 1140px;
 		 margin-left: auto; margin-right: auto" class="container">Formulario de Submissão</h1>
 	
