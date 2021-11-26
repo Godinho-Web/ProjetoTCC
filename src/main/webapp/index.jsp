@@ -35,7 +35,7 @@
 			            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
 			          </li>
 			          <li class="nav-item">
-			            <a class="nav-link" href="FormularioSubmissao.jsp">Admin</a>
+			            <a class="nav-link" href="Login.jsp">Admin</a>
 			          </li>
 			     
 			      </div>

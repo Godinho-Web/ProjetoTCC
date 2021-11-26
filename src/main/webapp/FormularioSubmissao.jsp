@@ -35,10 +35,11 @@
 		            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
 		          </li>
 		          <li class="nav-item">
-		            <a class="nav-link" href="FormularioSubmissao.jsp">Admin</a>
+		            <a class="nav-link" href="Login.jsp">Admin</a>
 		          </li>
 		     
-		      </div>
+		      </div>    <!-- *****************
+		      					FINAL DO NAV, MENU, LOGO ***************-->
 		    </div>
 		  </div>
 		</nav>
@@ -52,7 +53,7 @@
 	
 	<%
 		String nome="";
-		String email="";
+		String email="";    // PEGANDO VALORES DAS CLASSES E DO BANCO DE DADOS, PARTE JAVA SCRIPT
 		String RA="";
 		int id_trabalho=0;
 		String titulo="";
@@ -75,11 +76,11 @@
 			palavras_chaves = t.getPalavras_chaves();
 			arquivo = t.getArquivo();
 			data = t.getData();
-			validacao = t.getValidacao();
+			validacao = t.getValidacao();    // PEGANDO VALORES DAS CLASSES E DO BANCO DE DADOS, PARTE JAVA SCRIPT
 			autorizacao = t.getAutorizacao();
 			id_aluno = t.getId_aluno();
 			id_professor = t.getId_professor();
-			id_curso = t.getId_curso();
+			id_curso = t.getId_curso();     
 		}
 		
 	
@@ -88,9 +89,10 @@
 		<div style="background-color: #E4E4E4;border-radius: 8px" class="row" >
 		
 			<div role="main" class="col-md-6">	
-				<form action="EnviarArquivo" enctype="multipart/form-data" method="post">
+				<form action="EnviarArquivo" enctype="multipart/form-data" method="post">    <!-- *****************
+		      																				PARTE DO FORMULARIO ***************-->
 						<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
-						</br>
+						</br>  
 						<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
 						<label for="exampleFormControlInput1" class="form-label">Nome:</label>
 						<input type="text" name="nome" value="<%= nome %>" class="form-control" type="text" placeholder="Nome" aria-label="default input example" />
