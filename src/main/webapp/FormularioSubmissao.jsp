@@ -16,14 +16,19 @@
 </head>
 	
 <body style="background-color: #25702F">
+<!-- NAV, LOGOTIPO, MENU 
+**********
+**********
+**********
+**********-->
 <header>
-		<div style="display: flex; height: 200px; background-color: #25702F">
-			<img src="logo_libertas_integradas_topo.png" width="300px" height="200px">
+		<div style="display: flex; height: 220px; background-color: #25702F">
+			<img style="margin-left: 60px" src="logo_libertas_integradas_topo.png" width="250px" height="200px">
 			
 			<nav class="navbar navbar-light bg-#25702F">
 				  <div class="container-fluid" style="background-color: #25702F">
-				    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-				      <span class="navbar-toggler-icon"></span>
+				    <button class="navbar-toggler" style="background-color: white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+				      <span class="navbar-toggler-icon" style="background-color: white"></span>
 				    </button>
 				    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 				      <div class="offcanvas-header">
@@ -39,25 +44,30 @@
 				            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
 				          </li>
 				          <li class="nav-item">
-				            <a class="nav-link" href="FormularioSubmissao.jsp">Admin</a>
+				            <a class="nav-link" href="Login.jsp">Admin</a>
 				          </li>
 				     
 				      </div>
-				    </div>
+				    </div>  
 				  </div>
 				</nav>
 		</div>
 	</header>	
-	<h1 style="background-color: #E4E4E4; border-radius: 5px; text-align: center; width: 1140px;
+	<h1 style="background-color: #E4E4E4; border-radius: 5px; text-align: center; 
 		 margin-left: auto; margin-right: auto" class="container">Formulario de Submissão</h1>
 	
+	<!-- PARTE JAVASCPRIT DO CODIGO QUE COMUNICA COM O BANCO E PEGA AS CLASSES E VALORES
+	*********
+	*********
+	*********
+	********* -->
 	
 	<%
 		String nome="";
 		String email="";
 		String RA="";
 		int id_trabalho=0;
-		String titulo="";
+		String titulo="";  
 		String resumo="";
 		String palavras_chaves="";
 		String arquivo="";
@@ -83,14 +93,19 @@
 			id_professor = t.getId_professor();
 			id_curso = t.getId_curso();
 		}
-		
-	
 	%>
+	
+	<!-- FORMULARIO DE SUBMISSAO  A SEGUIR
+	********
+	********
+	********
+	********
+	-->
 	<div class="container">
 		<div style="background-color: #E4E4E4;border-radius: 8px" class="row" >
 		
 			<div role="main" class="col-md-6">	
-				<form action="EnviarArquivo" enctype="multipart/form-data" method="post">
+				<form action="EnviarArquivo" enctype="multipart/form-data" method="post">   
 						<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
 						<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
 						<br>
@@ -109,7 +124,7 @@
 								ProfessorDao pdao = new ProfessorDao();
 								for (Professor p: pdao.listar()){
 									String sel = "";
-									if (p.equals(sel)){
+									if (p.equals(sel)){  
 										sel = " SELECTED ";
 									}
 									out.print("<option value="+p.getId_professor()+sel+">");
@@ -117,11 +132,8 @@
 									out.print("</option>");
 								
 							}
-							
-							
+
 							%>
-						
-						
 						</select>
 						</br>
 						
@@ -136,14 +148,10 @@
 									}
 									out.print("<option value="+c.getId_curso()+sel+">");
 									out.print(c.getNome() + "/" + c.getId_curso());
-									out.print("</option>");
-								
+									out.print("</option>");	
 							}
-							
-							
+
 							%>
-						
-						
 						</select>
 						</br>
 			</div>
@@ -182,14 +190,15 @@
 					<input type="radio" name="autorizacao"  value="<%= autorizacao %>" />
 					<label>Não</label>
 					</br>
-					<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-						<input type="submit" class="btn btn-outline-success" value="Enviar">
+					<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="height: 50px">
+						<a href="#"><input type="button" class="btn btn-outline-success"  value="Enviar "></a>
 						<a href="index.jsp"><input type="button" class="btn btn-outline-info"  value="Voltar "></a>
 					</div>
 			</form>
 			</aside>
 		</div>	
 	</div>
+	<br><br>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
