@@ -14,46 +14,47 @@
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
 </head>
-	<nav class="navbar navbar-light bg-light">
-		  <div class="container-fluid">
-		  	<h1>Trabalho de Conclusao de Curso</h1>
-		    
-		    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-		      <span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-		      <div class="offcanvas-header">
-		        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-		        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-		      </div>
-		      <div class="offcanvas-body">
-		        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-		          <li class="nav-item">
-		            <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
-		          </li>
-		          <li class="nav-item">
-		            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
-		          </li>
-		          <li class="nav-item">
-		            <a class="nav-link" href="Login.jsp">Admin</a>
-		          </li>
-		     
-		      </div>    <!-- *****************
-		      					FINAL DO NAV, MENU, LOGO ***************-->
-		    </div>
-		  </div>
-		</nav>
-	
 	
 <body style="background-color: #25702F">
-<br><br>
+<header>
+		<div style="display: flex; height: 200px; background-color: #25702F">
+			<img src="logo_libertas_integradas_topo.png" width="300px" height="200px">
+			
+			<nav class="navbar navbar-light bg-#25702F">
+				  <div class="container-fluid" style="background-color: #25702F">
+				    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+				      <span class="navbar-toggler-icon"></span>
+				    </button>
+				    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+				      <div class="offcanvas-header">
+				        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+				        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				      </div>
+				      <div class="offcanvas-body">
+				        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+				          <li class="nav-item">
+				            <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
+				          </li>
+				          <li class="nav-item">
+				            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
+				          </li>
+				          <li class="nav-item">
+				            <a class="nav-link" href="FormularioSubmissao.jsp">Admin</a>
+				          </li>
+				     
+				      </div>
+				    </div>
+				  </div>
+				</nav>
+		</div>
+	</header>	
 	<h1 style="background-color: #E4E4E4; border-radius: 5px; text-align: center; width: 1140px;
 		 margin-left: auto; margin-right: auto" class="container">Formulario de Submissão</h1>
 	
 	
 	<%
 		String nome="";
-		String email="";    // PEGANDO VALORES DAS CLASSES E DO BANCO DE DADOS, PARTE JAVA SCRIPT
+		String email="";
 		String RA="";
 		int id_trabalho=0;
 		String titulo="";
@@ -76,11 +77,11 @@
 			palavras_chaves = t.getPalavras_chaves();
 			arquivo = t.getArquivo();
 			data = t.getData();
-			validacao = t.getValidacao();    // PEGANDO VALORES DAS CLASSES E DO BANCO DE DADOS, PARTE JAVA SCRIPT
+			validacao = t.getValidacao();
 			autorizacao = t.getAutorizacao();
 			id_aluno = t.getId_aluno();
 			id_professor = t.getId_professor();
-			id_curso = t.getId_curso();     
+			id_curso = t.getId_curso();
 		}
 		
 	
@@ -89,23 +90,19 @@
 		<div style="background-color: #E4E4E4;border-radius: 8px" class="row" >
 		
 			<div role="main" class="col-md-6">	
-				<form action="EnviarArquivo" enctype="multipart/form-data" method="post">    <!-- *****************
-		      																				PARTE DO FORMULARIO ***************-->
+				<form action="EnviarArquivo" enctype="multipart/form-data" method="post">
 						<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
-						</br>  
 						<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
-						<label for="exampleFormControlInput1" class="form-label">Nome:</label>
+						<br>
+						<label for="exampleFormControlInput1">Nome:</label>
 						<input type="text" name="nome" value="<%= nome %>" class="form-control" type="text" placeholder="Nome" aria-label="default input example" />
 						</br>
-						
 						RA:
 						<input type="text" name="ra" value="<%= RA %>"class="form-control" type="text" placeholder="RA" aria-label="default input example"/>
 						</br>
-						
 						Email:
 						<input type="text" name="email" value="<%= email %>"class="form-control" type="text" placeholder="E-mail" aria-label="default input example"/>
 						</br>
-						
 						Professor:
 						<select name="id_professor" class="form-select" aria-label="Default select example">
 							<%
@@ -151,7 +148,7 @@
 						</br>
 			</div>
 			<aside role="complement" class="col-md-6">
-			</br>
+				<br>
 					Titulo:
 					<input type="text" name="titulo" value="<%= titulo %>"class="form-control" type="text" placeholder="Titulo" aria-label="default input example"/>
 					</br>
@@ -162,23 +159,26 @@
 					Resumo:
 					<input type="text" name="resumo" value="<%= resumo %>"class="form-control" type="text" placeholder="Resumo" aria-label="default input example"/>
 					</br>
-					
-					<div>
-						Arquivo: <input type="file" name="foto"/>
+					Arquivo: 
+					<br>
+					<div class="input-group mb-3">
+						<input type="file" name="foto"  class="form-control" id="inputGroupFile02"/>
+						<label class="input-group-text" for="inputGroupFile02">Upload</label>
 					</div>
 					</br>
 					<div >
-						Na qualidade de titular dos direitos de autor(a) da publicação, de acordo com a Lei n° 9610/98, 
+						<p>
+						&nbsp;&nbsp; Na qualidade de titular dos direitos de autor(a) da publicação, de acordo com a Lei n° 9610/98, 
 						autorizo a Libertas - Faculdades Integradas a disponibilizar em formato impresso e eletrônico no 
 						repositório de trabalhos acadêmicos da instituição (na internet), para fins de consulta, leitura, 
 						impressão e/ou download individual a titulo de divulgação científica, o texto integral da obra acima citada, 
 						sem responsabilidade do ressarcimento de direitos autorais e sem pagamento de quaisquer direitos autorais patrimoniais 
 						por parte da Libertas - Faculdades Integradas. 
+						</p>
 					</div>
 					</br>
 					<input type="radio" name="autorizacao" value="<%= autorizacao %>" />
 					<label>Sim</label>
-					
 					<input type="radio" name="autorizacao"  value="<%= autorizacao %>" />
 					<label>Não</label>
 					</br>
