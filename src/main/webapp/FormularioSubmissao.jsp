@@ -15,7 +15,7 @@
 <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
 </head>
 	
-<body style="background-color: #25702F">
+<body style="background-color: #25702F; font-family: lato">
 <!-- NAV, LOGOTIPO, MENU 
 **********
 **********
@@ -23,16 +23,16 @@
 **********-->
 <header>
 		<div style="display: flex; height: 220px; background-color: #25702F">
-			<img style="margin-left: 60px" src="logo_libertas_integradas_topo.png" width="250px" height="200px">
+			<img style="margin-left: 60px" src="logo_libertas_integradas_topo.png" width="280px" height="175px">
 			
-			<nav class="navbar navbar-light bg-#25702F">
+			<nav class="navbar navbar-light bg-#25702F" style="font-size: 25px">
 				  <div class="container-fluid" style="background-color: #25702F">
 				    <button class="navbar-toggler" style="background-color: white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 				      <span class="navbar-toggler-icon" style="background-color: white"></span>
 				    </button>
 				    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 				      <div class="offcanvas-header">
-				        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+				        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-size: 35px">Menu</h5>
 				        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 				      </div>
 				      <div class="offcanvas-body">
@@ -174,9 +174,9 @@
 						<label class="input-group-text" for="inputGroupFile02">Upload</label>
 					</div>
 					</br>
-					<div >
+					<div>
 						<p>
-						&nbsp;&nbsp; Na qualidade de titular dos direitos de autor(a) da publicação, de acordo com a Lei n° 9610/98, 
+						&nbsp;&nbsp;&nbsp; Na qualidade de titular dos direitos de autor(a) da publicação, de acordo com a Lei n° 9610/98, 
 						autorizo a Libertas - Faculdades Integradas a disponibilizar em formato impresso e eletrônico no 
 						repositório de trabalhos acadêmicos da instituição (na internet), para fins de consulta, leitura, 
 						impressão e/ou download individual a titulo de divulgação científica, o texto integral da obra acima citada, 
@@ -191,8 +191,8 @@
 					<label>Não</label>
 					</br>
 					<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="height: 50px">
-						<a href="#"><input type="button" class="btn btn-outline-success"  value="Enviar "></a>
-						<a href="index.jsp"><input type="button" class="btn btn-outline-info"  value="Voltar "></a>
+						<a href="#"><input type="button" class="btn btn-outline-success"  value="Enviar" style="margin-right: 15px"></a>
+						<a href="index.jsp"><input type="button" class="btn btn-outline-info"  value="Voltar"></a>
 					</div>
 			</form>
 			</aside>

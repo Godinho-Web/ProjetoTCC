@@ -9,7 +9,7 @@
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
 </head>
-<body>
+<body style="background-color: #25702F; font-family: lato">
 
 	<%
 		int id_admin=0;
@@ -25,8 +25,8 @@
 	
 	%>
 	<br><br>
-	 <div style="background-color: #E4E4E4;border-radius: 8px" class="container">
-		<div class="col-md-5" >
+<div style="position: absolute; width: 100%; height: 100%"> 
+	 <div style="background-color: #E4E4E4;border-radius: 8px;width: 500px; height: 300px; position: absolute;top: 50%; left: 50%; margin-top: -250px; margin-left: -250px" class="container">
 		  <form class="px-4 py-3">
 		    <div class="mb-3">
 		      <label for="exampleDropdownFormEmail1" class="form-label">Endereço de e-mail</label>
@@ -38,10 +38,12 @@
 		    </div>
 		    <div class="mb-3">
 		    </div>
-		    <button type="submit" class="btn btn-primary">Entrar</button>
-		    <a href="index.jsp"><input type="button" class="btn btn-primary" value="Voltar">
+		    <button type="submit" class="btn btn-outline-success" style="margin-right: 20px">Entrar</button>
+		    
+		    <a href="index.jsp"><input type="button" class="btn btn-outline-info" value="Voltar">
 		  </form>
 	   </div> 
+</div>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
