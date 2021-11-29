@@ -191,7 +191,7 @@
 					<label>Não</label>
 					</br>
 					<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="height: 50px">
-						<a href="#"><input type="button" class="btn btn-outline-success"  value="Enviar" style="margin-right: 15px"></a>
+						<a href="Confirmacao.jsp"><input type="button" class="btn btn-outline-success"  value="Enviar" style="margin-right: 15px"></a>
 						<a href="index.jsp"><input type="button" class="btn btn-outline-info"  value="Voltar"></a>
 					</div>
 			</form>

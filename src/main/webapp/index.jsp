@@ -1,3 +1,7 @@
+<%@page import="org.libertas.tcc.Curso"%>
+<%@page import="org.libertas.tcc.CursoDao"%>
+<%@page import="org.libertas.tcc.ProfessorDao"%>
+<%@page import="org.libertas.tcc.Professor"%>
 <%@page import="org.libertas.tcc.AlunoDao"%>
 <%@page import="org.libertas.tcc.Trabalho"%>
 <%@page import="org.libertas.tcc.Aluno"%>
@@ -49,6 +53,13 @@
 	      	</form>
 		</div>
 	<%
+		ProfessorDao pdao = new ProfessorDao();
+		for (Professor p: pdao.listar()){
+			
+		CursoDao cdao = new CursoDao();
+		for (Curso c: cdao.listar()){
+			
+			
 		AlunoDao adao = new AlunoDao();
 		for (Aluno a: adao.listar()){
 	
@@ -58,30 +69,32 @@
 		
 	%>
 	<br><br><br><br>
-	<div class="container">
+	<div style="margin-left: 20px">
 	  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-	  <div class="row">
+	  <div>
 	    <div><%= t.getTitulo() %></div>
 	  </div>
 	
 	  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-	  <div class="row">
-	    <div class="col-6 col-md-4"><%= a.getNome() %></div>
-	    <div class="col-6 col-md-4"><%= a.getEmail() %></div>
-	    <div class="col-6 col-md-4"><%= t.getArquivo() %></div>
+	  <div>
+	    <div><%= a.getNome() %></div>
+	    <div><%= a.getEmail() %></div>
+	    <div><%= t.getArquivo() %></div>
 	  </div>
 	
 	<div>
 	  <!-- Columns are always 50% wide, on mobile and desktop -->
-	  <div class="row">
-	    <div class="col-6 col-md-4"><%= t.getId_professor() %></div>
-	    <div class="col-6 col-md-4"><%= t.getId_curso() %></div>
+	  <div>
+	    <div><%= p.getNome() %></div>
+	    <div><%= c.getNome() %></div>
 	  </div>
-	   <div class="row">
-	    <div class="col-6 col-md-4"><%= t.getResumo() %></div>
+	   <div>
+	    <div><%= t.getResumo() %></div>
 	  </div>
 		
 		<% 
+			}
+			}
 			}
 			}
 		%>
