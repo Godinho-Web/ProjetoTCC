@@ -1,3 +1,4 @@
+<%@page import="org.libertas.tcc.Trabalho_Index"%>
 <%@page import="org.libertas.tcc.Curso"%>
 <%@page import="org.libertas.tcc.CursoDao"%>
 <%@page import="org.libertas.tcc.ProfessorDao"%>
@@ -63,57 +64,48 @@
 	      	
 		</div>
 	<%
-		ProfessorDao pdao = new ProfessorDao();
-		for (Professor p: pdao.listar()){
-			
-		CursoDao cdao = new CursoDao();
-		for (Curso c: cdao.listar()){
-			
-			
-		AlunoDao adao = new AlunoDao();
-		for (Aluno a: adao.listar()){
 	
 	// FOR PARA PERCORRER ALUNO E TRABALHO, COM FINALIDADE DE PUXAR OS VALORES PARA PREENCHIMENTO DA GRADE DE TRABALHOS
 		TrabalhoDao tdao = new TrabalhoDao();
-		for (Trabalho t: tdao.listar()){
+		for (Trabalho_Index ti: tdao.listar_index()){
 		
 	%>
 	<br><br><br><br>
-	<div  style="background-color: #E4E4E4; border-radius: 5px; margin-left: auto; margin-right: auto" class="container">
-		<div  style="margin-left: auto; margin-right: auto" class="container">
-		  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-		  <div>
-			  <div>
-			    <div><%= t.getTitulo() %></div>
-			  </div>
-			
-			  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-			  <div>
-			    <div><%= a.getNome() %></div>
-			    <div><%= a.getEmail() %></div>
-			    <div><%= t.getArquivo() %></div>
-			  </div>
-			
-			<div>
-			  <!-- Columns are always 50% wide, on mobile and desktop -->
-			  <div>
-			    <div><%= p.getNome() %></div>
-			    <div><%= c.getNome() %></div>
-			  </div>
-			   <div>
-			    <div><%= t.getResumo() %></div>
-			  </div>
+	<table class="table table-striped" >
+		<div  style="background-color: #E4E4E4; border-radius: 5px; margin-left: auto; margin-right: auto; padding-top: 15px" class="container">
+			<div  style="margin-left: auto; margin-right: auto" class="container">
+			  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+			  <div class="container" >
+				  <div class="row">
+				    <div class="col"><%= ti.getTitulo() %></div>
+				  </div>
 				
-				<% 
-					}
-					}
-					}
-					}
-				%>
-			
+				  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+				  <div class="row">
+				    <div class="col"><%= ti.getNome() %></div>
+				    <div class="col"><%= ti.getEmail() %></div>
+				    <!--  <div class="col"><//%= ti.getArquivo() %></div>-->
+				    <div class="col"><img alt="Download" src="./download.png" width="30" height="30"></div>
+				  </div>
+				
+				<div>
+				  <!-- Columns are always 50% wide, on mobile and desktop -->
+				  <div class="row">
+				    <div class="col"><%= ti.getNomepr() %></div>
+				    <div class="col"><%= ti.getNomecur() %></div>
+				  </div>
+				   <div class="row">
+				    <div class="col"><%= ti.getResumo() %></div>
+				  </div>
+					
+					<% 
+						}
+					%>
+				
+				</div>
 			</div>
 		</div>
-	</div>
+	</table>	
 	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

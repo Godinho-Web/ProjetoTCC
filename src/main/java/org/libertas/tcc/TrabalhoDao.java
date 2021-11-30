@@ -146,4 +146,42 @@ public class TrabalhoDao {
 		
 		// TERMINO DO METODO QUE LISTA TODOS OS TRABALHOS
 	}
+	
+	
+	public List<Trabalho_Index> listar_index(){
+		List<Trabalho_Index> dadosin = new LinkedList<Trabalho_Index>();
+		try {
+			Conexao con = new Conexao();
+			String sql = "SELECT t.Titulo,a.Nome AS Nome_Aluno,a.Email,t.Arquivo\r\n"
+					+ ",p.Nome AS Nome_Professor,c.Nome AS Nome_Curso,t.Resumo FROM Trabalho t\r\n"
+					+ "INNER JOIN Professor p ON\r\n"
+					+ "t.id_professor = p.id_professor\r\n"
+					+ "INNER JOIN Curso c ON\r\n"
+					+ "t.id_curso = c.id_curso\r\n"
+					+ "INNER JOIN Aluno a ON\r\n"
+					+ "t.id_aluno = a.id_aluno\r\n"
+					+ "ORDER BY t.Titulo;";
+			Statement instrucao = con.getConexao().createStatement();
+			ResultSet res = instrucao.executeQuery(sql);
+			while (res.next()) {
+				Trabalho_Index ti = new Trabalho_Index();
+				ti.setTitulo(res.getString("titulo"));
+				ti.setNome(res.getString("Nome_Aluno"));
+				ti.setEmail(res.getString("email"));
+				ti.setArquivo(res.getString("arquivo"));
+				ti.setNomepr(res.getString("Nome_Professor"));
+				ti.setNomecur(res.getString("Nome_Curso"));
+				ti.setResumo(res.getString("resumo"));
+				dadosin.add(ti);
+			}
+			
+			res.close();
+			con.getConexao().close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dadosin;
+		
+		// TERMINO DO METODO QUE LISTA TODOS OS TRABALHOS
+	}
 }
