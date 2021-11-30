@@ -12,21 +12,21 @@ public class TrabalhoDao {
 		try {
 			Conexao con = new Conexao();
 			String sql = "INSERT INTO Trabalho "
-					+ "(Titulo,Resumo,Palavras_chaves,Arquivo,Data,Validacao,Autorizacao,id_aluno,id_professor,id_curso)"
+					+ "(Titulo,Resumo,Palavras_chaves,Arquivo,Validacao,Autorizacao,id_aluno,id_professor,id_curso,Data)"
 					+ " VALUES "
-					+ "(?,?,?,?,?,?,?,?,?,?)";
+					+ "(?,?,?,?,?,?,?,?,?,CURDATE())"; // CURDATE PEGA A DATA ATUAL DO COMPUTADOR
 			
 			PreparedStatement ps = con.getConexao().prepareStatement(sql);
 			ps.setString(1, t.getTitulo());
 			ps.setString(2, t.getResumo());
 			ps.setString(3, t.getPalavras_chaves());
 			ps.setString(4, t.getArquivo());
-			ps.setString(5, t.getData());
-			ps.setString(6, t.getValidacao());
-			ps.setString(7, t.getAutorizacao());
-			ps.setInt(8, t.getId_aluno());
-			ps.setInt(9, t.getId_professor());
-			ps.setInt(10, t.getId_curso());
+			//ps.setString(5, t.getData());
+			ps.setString(5, t.getValidacao());
+			ps.setString(6, t.getAutorizacao());
+			ps.setInt(7, t.getId_aluno());
+			ps.setInt(8, t.getId_professor());
+			ps.setInt(9, t.getId_curso());
 			ps.execute();
 			
 			con.getConexao().close();

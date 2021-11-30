@@ -77,8 +77,9 @@ public class EnviarArquivo extends HttpServlet {
 			t.setTitulo(request.getParameter("titulo"));
 			t.setResumo(request.getParameter("resumo"));
 			t.setPalavras_chaves(request.getParameter("pchave"));
-			t.setArquivo(request.getParameter("arquivo"));
-			t.setData(request.getParameter("data"));
+			//t.setArquivo(request.getParameter("arquivo"));
+			t.setArquivo(fileName);
+			//t.setData(request.getParameter("data"));
 			t.setValidacao(request.getParameter("validacao"));
 			t.setAutorizacao(request.getParameter("autorizacao"));
 			t.setId_professor(Integer.parseInt(request.getParameter("id_professor")));
