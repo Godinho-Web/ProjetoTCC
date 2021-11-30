@@ -34,7 +34,7 @@
 				      <div class="offcanvas-body">
 				        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 				          <li class="nav-item">
-				            <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
+				            <a class="nav-link active" aria-current="page" href="index.jsp">Inicio</a>
 				          </li>
 				          <li class="nav-item">
 				            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
@@ -55,8 +55,12 @@
 		<div  margin-left: auto; margin-right: auto" class="container">
 			<form class="d-flex">
 	        	<input class="form-control me-2" type="search" placeholder="Buscar ..." aria-label="Buscar">
-	        	<button class="btn btn-info" type="submit">Buscar</button>
+	        	<button class="btn btn-light" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+ 					 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+					</svg>
+			</button>
 	      	</form>
+	      	
 		</div>
 	<%
 		ProfessorDao pdao = new ProfessorDao();
