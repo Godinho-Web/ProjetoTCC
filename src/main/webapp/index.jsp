@@ -53,11 +53,11 @@
 	      	</form>
 		</div>
 	<%
-		ProfessorDao pdao = new ProfessorDao();
-		for (Professor p: pdao.listar()){
+		//ProfessorDao pdao = new ProfessorDao();
+		//for (Professor p: pdao.listar()){
 			
-		CursoDao cdao = new CursoDao();
-		for (Curso c: cdao.listar()){
+		//CursoDao cdao = new CursoDao();
+		//for (Curso c: cdao.listar()){
 			
 			
 		AlunoDao adao = new AlunoDao();
@@ -85,16 +85,14 @@
 	<div>
 	  <!-- Columns are always 50% wide, on mobile and desktop -->
 	  <div>
-	    <div><%= p.getNome() %></div>
-	    <div><%= c.getNome() %></div>
+	    <div><%= t.getId_professor() %></div>
+	    <div><%= t.getId_curso() %></div>
 	  </div>
 	   <div>
 	    <div><%= t.getResumo() %></div>
 	  </div>
 		
 		<% 
-			}
-			}
 			}
 			}
 		%>

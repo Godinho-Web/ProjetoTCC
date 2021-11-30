@@ -185,13 +185,13 @@
 						</p>
 					</div>
 					</br>
-					<input type="radio" name="autorizacao" value="<%= autorizacao %>" />
+					<input type="radio" name="autorizacao" value="sim" />
 					<label>Sim</label>
-					<input type="radio" name="autorizacao"  value="<%= autorizacao %>" />
+					<input type="radio" name="autorizacao"  value="nao" />
 					<label>Não</label>
 					</br>
 					<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="height: 50px">
-						<a href="Confirmacao.jsp"><input type="button" class="btn btn-outline-success"  value="Enviar" style="margin-right: 15px"></a>
+						<input type="submit" class="btn btn-outline-success"  value="Enviar" style="margin-right: 15px">
 						<a href="index.jsp"><input type="button" class="btn btn-outline-info"  value="Voltar"></a>
 					</div>
 			</form>
