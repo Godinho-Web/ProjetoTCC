@@ -54,7 +54,7 @@
 		</div>
 	</header>	
 	<h1 style="background-color: #E4E4E4; border-radius: 5px; text-align: center; 
-		 margin-left: auto; margin-right: auto" class="container">Formulario de Submissão</h1>
+		 margin-left: auto; margin-right: auto" class="container">Formulário de Submissão</h1>
 	
 	<!-- PARTE JAVASCPRIT DO CODIGO QUE COMUNICA COM O BANCO E PEGA AS CLASSES E VALORES
 	*********
