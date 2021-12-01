@@ -1,13 +1,22 @@
 package org.libertas.tcc;
 
 public class Trabalho_Index {
-	String titulo;
-	String nome;
-	String email;
-	String arquivo;
-	String nomepr;
-	String nomecur;
-	String resumo;
+	private String titulo;
+	private String nome;
+	private String email;
+	private String arquivo;
+	private String nomepr;
+	private String nomecur;
+	private String resumo;
+	
+	
+	public String getPalavras_chaves() {
+		return palavras_chaves;
+	}
+	public void setPalavras_chaves(String palavras_chaves) {
+		this.palavras_chaves = palavras_chaves;
+	}
+	private String palavras_chaves;
 	
 	
 	public String getTitulo() {

@@ -184,4 +184,53 @@ public class TrabalhoDao {
 		
 		// TERMINO DO METODO QUE LISTA TODOS OS TRABALHOS
 	}
+	
+	public List<Trabalho_Index> buscar(String parametro){
+		List<Trabalho_Index> dadosin = new LinkedList<Trabalho_Index>();
+		try {
+			Conexao con = new Conexao();
+			String sql = "SELECT t.Titulo,a.Nome AS Nome_Aluno,a.Email,t.Arquivo"
+					+ ",p.Nome AS Nome_Professor,c.Nome AS Nome_Curso,t.Resumo,t.Palavras_chaves FROM Trabalho t "
+					+ "INNER JOIN Professor p ON "
+					+ "t.id_professor = p.id_professor "
+					+ "INNER JOIN Curso c ON "
+					+ "t.id_curso = c.id_curso "
+					+ "INNER JOIN Aluno a ON "
+					+ "t.id_aluno = a.id_aluno "
+					+ "WHERE t.Titulo LIKE '%?%' OR a.Nome LIKE '%?%' OR p.Nome LIKE '%?%' "
+					+ "OR c.Nome LIKE '%?%' OR t.Resumo LIKE '%?%' OR t.Palavras_chaves LIKE '%?%' "
+					+ "ORDER BY t.Titulo";
+			
+			PreparedStatement ps = con.getConexao().prepareStatement(sql);
+			ps.setString(1, parametro);
+			ps.setString(2, parametro);
+			ps.setString(3, parametro);
+			ps.setString(4, parametro);
+			ps.setString(5, parametro);
+			ps.setString(6, parametro);
+			System.out.println(parametro);
+			ResultSet res = ps.executeQuery();
+			while (res.next()) {
+				Trabalho_Index ti = new Trabalho_Index();
+				ti.setTitulo(res.getString("titulo"));
+				ti.setNome(res.getString("Nome_Aluno"));
+				ti.setEmail(res.getString("email"));
+				ti.setArquivo(res.getString("arquivo"));
+				ti.setNomepr(res.getString("Nome_Professor"));
+				ti.setNomecur(res.getString("Nome_Curso"));
+				ti.setResumo(res.getString("resumo"));
+				dadosin.add(ti);
+				System.out.println(ti.getNome());
+			}
+			con.getConexao().close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dadosin;
+		// TERMINANDO METODO INSERIR TRABALHO LUIZ 21/11/2021
+	}
+	
+	
+	
 }
