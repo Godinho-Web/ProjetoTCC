@@ -1,12 +1,8 @@
+<%@page import="org.mariadb.jdbc.util.ParameterList"%>
 <%@page import="org.libertas.tcc.Trabalho_Index"%>
-<%@page import="org.libertas.tcc.Curso"%>
-<%@page import="org.libertas.tcc.CursoDao"%>
-<%@page import="org.libertas.tcc.ProfessorDao"%>
-<%@page import="org.libertas.tcc.Professor"%>
-<%@page import="org.libertas.tcc.AlunoDao"%>
 <%@page import="org.libertas.tcc.Trabalho"%>
-<%@page import="org.libertas.tcc.Aluno"%>
 <%@page import="org.libertas.tcc.TrabalhoDao"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -54,8 +50,8 @@
 		 margin-left: auto; margin-right: auto" class="container">Trabalhos de Conclusão de Curso</h1>
 			<br><br>
 		<div  margin-left: auto; margin-right: auto" class="container">
-			<form class="d-flex" action="Buscar" method="post">
-	        	<input class="form-control me-2" type="search" placeholder="Buscar ..." aria-label="Buscar" name="pesquisar">
+			<form class="d-flex" action="index.jsp" method="post">
+	        	<input class="form-control me-2" type="search" placeholder="Buscar ..." aria-label="Buscar" name="pesquisa" value="${param.pesquisa}"/>
 	        	<button class="btn btn-light" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
  					 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 					</svg>
@@ -63,13 +59,8 @@
 	      	</form>
 	      	
 		</div>
-	<%
-	
-	// FOR PARA PERCORRER ALUNO E TRABALHO, COM FINALIDADE DE PUXAR OS VALORES PARA PREENCHIMENTO DA GRADE DE TRABALHOS
-		TrabalhoDao tdao = new TrabalhoDao();
-		for (Trabalho_Index ti: tdao.listar_index()){
-		
-	%>
+	<jsp:useBean id="tidao" class="org.libertas.tcc.TrabalhoDao" scope="page"/>
+	<c:forEach var="ti" items="${tidao.buscar(param.pesquisa)}">
 	<br><br><br><br>
 	<table class="table table-striped" >
 		<div  style="background-color: #E4E4E4; border-radius: 5px; margin-left: auto; margin-right: auto; padding-top: 15px" class="container">
@@ -77,13 +68,13 @@
 			  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 			  <div class="container" >
 				  <div class="row">
-				    <div class="col"><%= ti.getTitulo() %></div>
+				    <div class="col">${ti.titulo}</div>
 				  </div>
 				
 				  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
 				  <div class="row">
-				    <div class="col"><%= ti.getNome() %></div>
-				    <div class="col"><%= ti.getEmail() %></div>
+				    <div class="col">${ti.nome}</div>
+				    <div class="col">${ti.email}</div>
 				    <!--  <div class="col"><//%= ti.getArquivo() %></div>-->
 				    <div class="col"><img alt="Download" src="./download.png" width="30" height="30"></div>
 				  </div>
@@ -91,20 +82,17 @@
 				<div>
 				  <!-- Columns are always 50% wide, on mobile and desktop -->
 				  <div class="row">
-				    <div class="col"><%= ti.getNomepr() %></div>
-				    <div class="col"><%= ti.getNomecur() %></div>
+				    <div class="col">${ti.nomepr}</div>
+				    <div class="col">${ti.nomecur}</div>
 				  </div>
 				   <div class="row">
-				    <div class="col"><%= ti.getResumo() %></div>
+				    <div class="col">${ti.resumo}</div>
 				  </div>
 					
-					<% 
-						}
-					%>
-				
 				</div>
 			</div>
 		</div>
+		</c:forEach>
 	</table>	
 	<script src="js/bootstrap.min.js"></script>
 </body>

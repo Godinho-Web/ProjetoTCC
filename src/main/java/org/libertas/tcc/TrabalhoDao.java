@@ -3,6 +3,7 @@ package org.libertas.tcc;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -185,7 +186,7 @@ public class TrabalhoDao {
 		// TERMINO DO METODO QUE LISTA TODOS OS TRABALHOS
 	}
 	
-	public List<Trabalho_Index> buscar(String parametro){
+	public List<Trabalho_Index> buscar(String pesquisa){
 		List<Trabalho_Index> dadosin = new LinkedList<Trabalho_Index>();
 		try {
 			Conexao con = new Conexao();
@@ -197,18 +198,17 @@ public class TrabalhoDao {
 					+ "t.id_curso = c.id_curso "
 					+ "INNER JOIN Aluno a ON "
 					+ "t.id_aluno = a.id_aluno "
-					+ "WHERE t.Titulo LIKE '%?%' OR a.Nome LIKE '%?%' OR p.Nome LIKE '%?%' "
-					+ "OR c.Nome LIKE '%?%' OR t.Resumo LIKE '%?%' OR t.Palavras_chaves LIKE '%?%' "
+					+ "WHERE t.Titulo LIKE ? OR a.Nome LIKE ? OR p.Nome LIKE ? "
+					+ "OR c.Nome LIKE ? OR t.Resumo LIKE ? OR t.Palavras_chaves LIKE ? "
 					+ "ORDER BY t.Titulo";
 			
 			PreparedStatement ps = con.getConexao().prepareStatement(sql);
-			ps.setString(1, parametro);
-			ps.setString(2, parametro);
-			ps.setString(3, parametro);
-			ps.setString(4, parametro);
-			ps.setString(5, parametro);
-			ps.setString(6, parametro);
-			System.out.println(parametro);
+			ps.setString(1, "%" + pesquisa + "%");
+			ps.setString(2, "%" + pesquisa + "%");
+			ps.setString(3, "%" + pesquisa + "%");
+			ps.setString(4, "%" + pesquisa + "%"); // passando o mesmo nome pois o parametro para buscar é o mesmo
+			ps.setString(5, "%" + pesquisa + "%");
+			ps.setString(6, "%" + pesquisa + "%");
 			ResultSet res = ps.executeQuery();
 			while (res.next()) {
 				Trabalho_Index ti = new Trabalho_Index();
@@ -220,7 +220,6 @@ public class TrabalhoDao {
 				ti.setNomecur(res.getString("Nome_Curso"));
 				ti.setResumo(res.getString("resumo"));
 				dadosin.add(ti);
-				System.out.println(ti.getNome());
 			}
 			con.getConexao().close();
 			
@@ -228,7 +227,7 @@ public class TrabalhoDao {
 			e.printStackTrace();
 		}
 		return dadosin;
-		// TERMINANDO METODO INSERIR TRABALHO LUIZ 21/11/2021
+		// 	METODO BUSCAR NO INDEX
 	}
 	
 	
