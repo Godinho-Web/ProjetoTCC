@@ -22,36 +22,35 @@
 **********
 **********-->
 <header>
-		<div style="display: flex; height: 220px; background-color: #25702F">
+	<div style="display: flex; height: 220px; background-color: #25702F">
 			<img style="margin-left: 60px" src="logo_libertas_integradas_topo.png" width="280px" height="175px">
 			
 			<nav class="navbar navbar-light bg-#25702F" style="font-size: 25px">
-				  <div class="container-fluid" style="background-color: #25702F">
+				  <div class="container-fluid" style="background-color: #25702F; color: white">
 				    <button class="navbar-toggler" style="background-color: white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 				      <span class="navbar-toggler-icon" style="background-color: white"></span>
 				    </button>
 				    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-				      <div class="offcanvas-header">
-				        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-size: 35px">Menu</h5>
+				      <div class="offcanvas-header" style="background-color: #25702F">
+				        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-size: 35px; color: white">Menu</h5>
 				        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 				      </div>
-				      <div class="offcanvas-body">
+				      <div class="offcanvas-body" style="background-color: #25702F">
 				        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 				          <li class="nav-item">
-				            <a class="nav-link active" aria-current="page" href="index.jsp">Inicio</a>
+				            <a class="nav-link active" aria-current="page" style=" color: inherit" href="index.jsp">Início</a>
 				          </li>
 				          <li class="nav-item">
-				            <a class="nav-link" href="FormularioSubmissao.jsp">Submissao</a>
+				            <a class="nav-link" href="FormularioSubmissao.jsp" style=" color: inherit">Submissão</a>
 				          </li>
 				          <li class="nav-item">
-				            <a class="nav-link" href="Login.jsp">Admin</a>
+				            <a class="nav-link" href="Login.jsp" style=" color: inherit">Admin</a>
 				          </li>
 				     
 				      </div>
 				    </div>  
 				  </div>
 				</nav>
-		</div>
 	</header>	
 	<h1 style="background-color: #E4E4E4; border-radius: 5px; text-align: center; 
 		 margin-left: auto; margin-right: auto" class="container">Formulário de Submissão</h1>
