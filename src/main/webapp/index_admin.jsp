@@ -58,7 +58,7 @@
 			</button>
 	      	</form>
 	      	<br><br>
-	      	<a href="admin_todostb.jsp"><input type="submit" value="Todos os Trabalhos"></a>
+	      	<a href="admin_todostb.jsp"><input type="submit" class="btn btn-outline-light"  style="height: 40px"  value="Todos os Trabalhos"></a>
 	      	
 		</div>
 	<jsp:useBean id="tidao" class="org.libertas.tcc.TrabalhoDao" scope="page"/>

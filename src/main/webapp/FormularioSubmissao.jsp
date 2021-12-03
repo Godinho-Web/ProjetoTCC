@@ -114,7 +114,7 @@
 						RA:
 						<input type="text" name="ra" value="<%= RA %>"class="form-control" type="text" placeholder="RA" aria-label="default input example"/>
 						</br>
-						Email:
+						E-mail:
 						<input type="text" name="email" value="<%= email %>"class="form-control" type="text" placeholder="E-mail" aria-label="default input example"/>
 						</br>
 						Professor:
@@ -156,16 +156,22 @@
 			</div>
 			<aside role="complement" class="col-md-6">
 				<br>
-					Titulo:
-					<input type="text" name="titulo" value="<%= titulo %>"class="form-control" type="text" placeholder="Titulo" aria-label="default input example"/>
+					Título:
+					<input type="text" name="título" value="<%= titulo %>"class="form-control" type="text" placeholder="Titulo" aria-label="default input example"/>
 					</br>
 					
 					Palavras Chave(3-5):
 					<input type="text" name="pchave" value="<%= palavras_chaves %>"class="form-control" type="text" placeholder="Palavras Chave" aria-label="default input example"/>
 					</br>
-					Resumo:
+				<!-- 	Resumo:
 					<input type="text" name="resumo" value="<%= resumo %>"class="form-control" type="text" placeholder="Resumo" aria-label="default input example"/>
 					</br>
+				 -->
+					Resumo:
+					<div class="form-floating">
+  						<textarea class="form-control" value="<%= resumo %> placeholder="Resumo" id="resumo" style="height: 170px"></textarea>
+					</div>
+					<br>
 					Arquivo: 
 					<br>
 					<div class="input-group mb-3">
@@ -189,9 +195,9 @@
 					<input type="radio" name="autorizacao"  value="nao" />
 					<label>Não</label>
 					</br>
-					<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="height: 50px">
-						<input type="submit" class="btn btn-outline-success"  value="Enviar" style="margin-right: 15px">
-						<a href="index.jsp"><input type="button" class="btn btn-outline-info"  value="Voltar"></a>
+					<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="height: 55px">
+						<input type="submit" class="btn btn-outline-success"  value="Enviar" style="margin-right: 15px; height: 40px">
+						<a href="index.jsp"><input type="button" class="btn btn-outline-info"  style="height: 40px"  value="Voltar"></a>
 					</div>
 			</form>
 			</aside>
