@@ -70,13 +70,13 @@
 			  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 			  <div class="container" >
 				  <div class="row">
-				    <div class="col">${ti.titulo}</div>
+				    <div class="col"><b>Título: </b>${ti.titulo}</div>
 				  </div>
 				
 				  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
 				  <div class="row">
-				    <div class="col">${ti.nome}</div>
-				    <div class="col">${ti.email}</div>
+				    <div class="col"><b>Nome: </b>${ti.nome}</div>
+				    <div class="col"><b>E-mail: </b>${ti.email}</div>
 				    <!--  <div class="col"><//%= ti.getArquivo() %></div>-->
 				    <div class="col"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
  						 <path d="M5.523 12.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548zm2.455-1.647c-.119.025-.237.05-.356.078a21.148 21.148 0 0 0 .5-1.05 12.045 12.045 0 0 0 .51.858c-.217.032-.436.07-.654.114zm2.525.939a3.881 3.881 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256zM8.278 6.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z"/>
@@ -88,15 +88,15 @@
 				<div>
 				  <!-- Columns are always 50% wide, on mobile and desktop -->
 				  <div class="row">
-				    <div class="col">${ti.nomepr}</div>
-				    <div class="col">${ti.nomecur}</div>
+				    <div class="col"><b>Professor: </b>${ti.nomepr}</div>
+				    <div class="col"><b>Curso: </b>${ti.nomecur}</div>
 				  </div>
 				   <div class="row">
-				    <div class="col">${ti.resumo}</div>
+				    <div class="col"><b>Resumo: </b>${ti.resumo}</div>
 				  </div>
 				  <div class="row">
-				    <div class="col">${ti.validacao}</div>
-				    <div class="col">${ti.autorizacao}</div>
+				    <div class="col"><b>Status: </b>${ti.validacao}</div>
+				    <div class="col"><b>Autorizado: </b>${ti.autorizacao}</div>
 				  </div>
 				  <br><br>
 				  <div class="row">

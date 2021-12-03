@@ -127,7 +127,7 @@
 										sel = " SELECTED ";
 									}
 									out.print("<option value="+p.getId_professor()+sel+">");
-									out.print(p.getNome() + "/" + p.getId_professor());
+									out.print(p.getNome());
 									out.print("</option>");
 								
 							}
@@ -146,7 +146,7 @@
 										sel = " SELECTED ";
 									}
 									out.print("<option value="+c.getId_curso()+sel+">");
-									out.print(c.getNome() + "/" + c.getId_curso());
+									out.print(c.getNome());
 									out.print("</option>");	
 							}
 
