@@ -31,7 +31,7 @@ public class Autenticacao extends HttpServlet {
 			out.print("<script>alert('Usuário/Senha inválido(s).');location.href='Login.jsp';</script>");
 		} else {
 			if (admin.getSenha().equals(senha)) {
-				response.sendRedirect("index.jsp");
+				response.sendRedirect("index_admin.jsp");
 			} else {
 				out.print("<script>alert('Usuário/Senha inválido(s).');location.href='Login.jsp';</script>");
 			}

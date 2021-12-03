@@ -57,10 +57,12 @@
 					</svg>
 			</button>
 	      	</form>
+	      	<br><br>
+	      	<a href="admin_todostb.jsp"><input type="submit" value="Todos os Trabalhos"></a>
 	      	
 		</div>
 	<jsp:useBean id="tidao" class="org.libertas.tcc.TrabalhoDao" scope="page"/>
-	<c:forEach var="ti" items="${tidao.buscar(param.pesquisa)}">
+	<c:forEach var="ti" items="${tidao.buscar_admin(param.pesquisa)}">
 	<br><br><br><br>
 	<table class="table table-striped" >
 		<div  style="background-color: #E4E4E4; border-radius: 5px; margin-left: auto; margin-right: auto; padding-top: 15px" class="container">
@@ -91,7 +93,7 @@
 				  </div>
 				  <br><br>
 				  <div class="row">
-				  	<div class="col"><input type="button" value="Aceitar"/></div>
+				  	<div class="col"><a href="aceitar.jsp?id_trabalho=${ti.id_trabalho}" >Aceitar</a></div>
 				    <div class="col"><input type="button" value="Recusar"/></div>
 				  </div>
 					<br><br>

@@ -27,7 +27,7 @@
 	<br><br>
 <div style="position: absolute; width: 100%; height: 100%"> 
 	 <div style="background-color: #E4E4E4;border-radius: 8px;width: 500px; height: 300px; position: absolute;top: 50%; left: 50%; margin-top: -250px; margin-left: -250px" class="container">
-		  <form class="px-4 py-3" action="Autenticacao" enctype="multipart/form-data" method="post">
+		  <form class="px-4 py-3" action="Autenticacao"  method="post">
 		    <div class="mb-3">
 		      <label for="exampleDropdownFormEmail1" class="form-label">Endereço de e-mail</label>
 		      <input type="email" name="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" value="<%= email %>"/>

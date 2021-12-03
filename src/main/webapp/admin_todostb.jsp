@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Trabalhos</title>
+<title>Página de Verificação de Trabalhos</title>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
 </head>
@@ -47,20 +47,22 @@
 		</div>
 	</header>	
 	<h1 style="background-color: #E4E4E4; border-radius: 5px; text-align: center; 
-		 margin-left: auto; margin-right: auto" class="container">Trabalhos de Conclusão de Curso</h1>
+		 margin-left: auto; margin-right: auto" class="container">Trabalhos Pendentes (Aceitar/Recusar)</h1>
 			<br><br>
 		<div  margin-left: auto; margin-right: auto" class="container">
-			<form class="d-flex" action="index.jsp" method="post">
+			<form class="d-flex" action="admin_todostb.jsp" method="post">
 	        	<input class="form-control me-2" type="search" placeholder="Buscar ..." aria-label="Buscar" name="pesquisa" value="${param.pesquisa}"/>
 	        	<button class="btn btn-light" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
  					 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 					</svg>
 			</button>
 	      	</form>
+	      	<br><br>
+	      	<a href="index_admin.jsp"><input type="submit" value="Voltar"></a>
 	      	
 		</div>
 	<jsp:useBean id="tidao" class="org.libertas.tcc.TrabalhoDao" scope="page"/>
-	<c:forEach var="ti" items="${tidao.buscar(param.pesquisa)}">
+	<c:forEach var="ti" items="${tidao.buscar_todos(param.pesquisa)}">
 	<br><br><br><br>
 	<table class="table table-striped" >
 		<div  style="background-color: #E4E4E4; border-radius: 5px; margin-left: auto; margin-right: auto; padding-top: 15px" class="container">
@@ -76,7 +78,8 @@
 				    <div class="col">${ti.nome}</div>
 				    <div class="col">${ti.email}</div>
 				    <!--  <div class="col"><//%= ti.getArquivo() %></div>-->
-				    <div class="col"><a href="../arquivosGrupo1/${ti.arquivo}"><img alt="Download" src="./download.png" width="30" height="30"></a></div>
+				    <div class="col"><img alt="Download" src="./download.png" width="30" height="30"></div>
+				    
 				  </div>
 				
 				<div>
@@ -88,7 +91,16 @@
 				   <div class="row">
 				    <div class="col">${ti.resumo}</div>
 				  </div>
-					
+				  <div class="row">
+				    <div class="col">${ti.validacao}</div>
+				    <div class="col">${ti.autorizacao}</div>
+				  </div>
+				  <br><br>
+				  <div class="row">
+				  	<div class="col"><input type="button" value="Aceitar"/></div>
+				    <div class="col"><input type="button" value="Recusar"/></div>
+				  </div>
+					<br><br>
 				</div>
 			</div>
 		</div>

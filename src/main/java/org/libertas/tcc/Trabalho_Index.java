@@ -1,6 +1,7 @@
 package org.libertas.tcc;
 
 public class Trabalho_Index {
+	private int id_trabalho;
 	private String titulo;
 	private String nome;
 	private String email;
@@ -8,8 +9,29 @@ public class Trabalho_Index {
 	private String nomepr;
 	private String nomecur;
 	private String resumo;
+	private String validacao;
+	private String autorizacao;
 	
 	
+	
+	public String getValidacao() {
+		return validacao;
+	}
+	public void setValidacao(String validacao) {
+		this.validacao = validacao;
+	}
+	public String getAutorizacao() {
+		return autorizacao;
+	}
+	public void setAutorizacao(String autorizacao) {
+		this.autorizacao = autorizacao;
+	}
+	public int getId_trabalho() {
+		return id_trabalho;
+	}
+	public void setId_trabalho(int id_trabalho) {
+		this.id_trabalho = id_trabalho;
+	}
 	public String getPalavras_chaves() {
 		return palavras_chaves;
 	}
