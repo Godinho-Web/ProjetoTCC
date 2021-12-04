@@ -20,7 +20,7 @@
 %>
 	<div style="position: absolute; width: 100%; height: 100%"> 
 		 <div style="background-color: #E4E4E4;border-radius: 8px;width: 500px; height: 300px; position: absolute;top: 50%; left: 50%; margin-top: -250px; margin-left: -250px" class="container">
-			<p style="text-align: center; font-size: 30px; color: green">Status alterado com sucesso</p>
+			<p style="text-align: center; font-size: 30px; color: red">Status alterado com sucesso</p>
 			<br>
 			<div class="container" style="height: 55px;margin-left: 40%;margin-top:10%">  
 				 <a href="admin_todostb.jsp"><input type="button" class="btn btn-outline-dark" value="Voltar"></a>
