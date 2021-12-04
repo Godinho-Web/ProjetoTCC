@@ -86,7 +86,29 @@ public class TrabalhoDao {
 			e.printStackTrace();
 		}
 		
-		// TERMINANDO METODO ALTERAR TRABALHO LUIZ 21/11/2021
+		// METODO ACEITAR QUE MUDA O STATUS DO TRABALHO
+	}
+	
+	
+	
+	public void recusar(int id_trabalho) {
+		try {
+			Conexao con = new Conexao();
+			String sql = "UPDATE Trabalho "
+					+ " SET Validacao='Reprovado' "
+					+ " WHERE id_trabalho=?";
+			
+			PreparedStatement ps = con.getConexao().prepareStatement(sql);
+			ps.setInt(1, id_trabalho);
+			ps.execute();
+			
+			con.getConexao();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		// METODO RECUSAR QUE ALTERA O STATUS PARA REPROVADO
 	}
 	
 	public void excluir(int id_trabalho) {

@@ -157,7 +157,7 @@
 			<aside role="complement" class="col-md-6">
 				<br>
 					Título:
-					<input type="text" name="título" value="<%= titulo %>"class="form-control" type="text" placeholder="Titulo" aria-label="default input example"/>
+					<input type="text" name="titulo" value="<%= titulo %>"class="form-control" type="text" placeholder="Titulo" aria-label="default input example"/>
 					</br>
 					
 					Palavras Chave(3-5):
@@ -169,7 +169,7 @@
 				 -->
 					Resumo:
 					<div class="form-floating">
-  						<textarea class="form-control" value="<%= resumo %> placeholder="Resumo" id="resumo" style="height: 170px"></textarea>
+  						<textarea class="form-control" value="<%= resumo %> placeholder="Resumo" id="resumo" style="height: 170px" name="resumo"></textarea>
 					</div>
 					<br>
 					Arquivo: 

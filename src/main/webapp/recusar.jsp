@@ -14,7 +14,7 @@
 	int id_trabalho = Integer.parseInt(request.getParameter("id_trabalho"));
 	TrabalhoDao tdao = new TrabalhoDao();
 	
-	tdao.aceitar(id_trabalho);
+	tdao.recusar(id_trabalho);
 
 
 %>
