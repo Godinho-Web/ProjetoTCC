@@ -23,7 +23,7 @@
 			<p style="text-align: center; font-size: 30px; color: red">Status alterado com sucesso</p>
 			<br>
 			<div class="container" style="height: 55px;margin-left: 40%;margin-top:10%">  
-				 <a href="admin_todostb.jsp"><input type="button" class="btn btn-outline-dark" value="Voltar"></a>
+				 <a href="index_admin.jsp"><input type="button" class="btn btn-outline-dark" value="Voltar"></a>
 		 	</div>  
 		</div>
 	</div>

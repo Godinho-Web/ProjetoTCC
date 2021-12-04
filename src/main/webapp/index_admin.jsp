@@ -16,7 +16,7 @@
 <body  style="background-color: #25702F; font-family: lato">
 		<header>
 		<div style="display: flex; height: 220px; background-color: #25702F">
-			<img style="margin-left: 60px" src="logo_libertas_integradas_topo.png" width="280px" height="175px">
+			<a href="index.jsp"><img style="margin-left: 60px" src="logo_libertas_integradas_topo.png" width="280px" height="175px"></a>
 			
 			<nav class="navbar navbar-light bg-#25702F" style="font-size: 25px">
 				  <div class="container-fluid" style="background-color: #25702F; color: white">
@@ -51,13 +51,14 @@
 			<br><br>
 		<div  margin-left: auto; margin-right: auto" class="container">
 			<form class="d-flex" action="index_admin.jsp" method="post">
-	        	<input class="form-control me-2" type="search" placeholder="Buscar ..." aria-label="Buscar" name="pesquisa" value="${param.pesquisa}"/>
+	        	<input class="form-control me-2" type="search" placeholder="Buscar... (Não buscar com acentuação)" aria-label="Buscar" name="pesquisa" value="${param.pesquisa}"/>
 	        	<button class="btn btn-light" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
  					 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 					</svg>
 			</button>
 	      	</form>
 	      	<br><br>
+	      	<a href="index.jsp"><input type="submit" class="btn btn-outline-light"  style="height: 40px"  value="Logout"></a>
 	      	<a href="admin_todostb.jsp"><input type="submit" class="btn btn-outline-light"  style="height: 40px"  value="Todos os Trabalhos"></a>
 	      	
 		</div>
@@ -108,7 +109,7 @@
 				  	</div>
 				  	<div class="col">
 				  <!--  <div class="col"><input type="button" value="Recusar"/></div> -->
-				  <a class="btn btn-danger" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+				  <a href="recusar.jsp?id_trabalho=${ti.id_trabalho}" class="btn btn-danger" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
   										<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
 									</svg>
 					</a>
@@ -120,7 +121,7 @@
 		</div>
 		</c:forEach>
 	</table>	
-	
+	<br><br>
 	<footer style="background-color: #E4E4E4; padding: 15px; text-align: center;border-radius: 5px"> 
     <p>Desenvolvido por:</p>
      <p> João Felipe Delfino - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">

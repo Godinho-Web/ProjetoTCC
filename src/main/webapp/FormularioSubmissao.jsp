@@ -23,7 +23,7 @@
 **********-->
 <header>
 	<div style="display: flex; height: 220px; background-color: #25702F">
-			<img style="margin-left: 60px" src="logo_libertas_integradas_topo.png" width="280px" height="175px">
+			<a href="index.jsp"><img style="margin-left: 60px" src="logo_libertas_integradas_topo.png" width="280px" height="175px"></a>
 			
 			<nav class="navbar navbar-light bg-#25702F" style="font-size: 25px">
 				  <div class="container-fluid" style="background-color: #25702F; color: white">
@@ -104,21 +104,21 @@
 		<div style="background-color: #E4E4E4;border-radius: 8px" class="row" >
 		
 			<div role="main" class="col-md-6">	
-				<form action="EnviarArquivo" enctype="multipart/form-data" method="post">   
+				<form class="was-validated" action="EnviarArquivo" enctype="multipart/form-data" method="post">   
 						<input type="hidden" name="id_trabalho" value="<%= id_trabalho %>"/>
 						<input type="hidden" name="id_aluno" value="<%= id_aluno %>"/>
 						<br>
 						<label for="exampleFormControlInput1">Nome:</label>
-						<input type="text" name="nome" value="<%= nome %>" class="form-control" type="text" placeholder="Nome" aria-label="default input example" />
+						<input type="text" name="nome" value="<%= nome %>" class="form-control" type="text" placeholder="Nome" aria-label="default input example" required/>
 						</br>
 						RA:
-						<input type="text" name="ra" value="<%= RA %>"class="form-control" type="text" placeholder="RA" aria-label="default input example"/>
+						<input type="text" name="ra" value="<%= RA %>"class="form-control" type="text" placeholder="RA" aria-label="default input example" required/>
 						</br>
 						E-mail:
-						<input type="text" name="email" value="<%= email %>"class="form-control" type="text" placeholder="E-mail" aria-label="default input example"/>
+						<input type="text" name="email" value="<%= email %>"class="form-control" type="text" placeholder="E-mail" aria-label="default input example" required/>
 						</br>
 						Professor:
-						<select name="id_professor" class="form-select" aria-label="Default select example">
+						<select name="id_professor" class="form-select" aria-label="Default select example" required>
 							<%
 								ProfessorDao pdao = new ProfessorDao();
 								for (Professor p: pdao.listar()){
@@ -137,7 +137,7 @@
 						</br>
 						
 						Curso:
-						<select name="id_curso" class="form-select" aria-label="Default select example">
+						<select name="id_curso" class="form-select" aria-label="Default select example" required>
 							<%
 								CursoDao cdao = new CursoDao();
 								for (Curso c: cdao.listar()){
@@ -157,11 +157,11 @@
 			<aside role="complement" class="col-md-6">
 				<br>
 					Título:
-					<input type="text" name="titulo" value="<%= titulo %>"class="form-control" type="text" placeholder="Titulo" aria-label="default input example"/>
+					<input type="text" name="titulo" value="<%= titulo %>"class="form-control" type="text" placeholder="Titulo" aria-label="default input example" required/>
 					</br>
 					
 					Palavras Chave(3-5):
-					<input type="text" name="pchave" value="<%= palavras_chaves %>"class="form-control" type="text" placeholder="Palavras Chave" aria-label="default input example"/>
+					<input type="text" name="pchave" value="<%= palavras_chaves %>"class="form-control" type="text" placeholder="Exemplo: teste1, teste2, teste3" aria-label="default input example" required/>
 					</br>
 				<!-- 	Resumo:
 					<input type="text" name="resumo" value="<%= resumo %>"class="form-control" type="text" placeholder="Resumo" aria-label="default input example"/>
@@ -169,13 +169,13 @@
 				 -->
 					Resumo:
 					<div class="form-floating">
-  						<textarea class="form-control" value="<%= resumo %> placeholder="Resumo" id="resumo" style="height: 170px" name="resumo"></textarea>
+  						<textarea class="form-control" value="<%= resumo %> placeholder="Resumo" id="resumo" style="height: 170px" name="resumo" required></textarea>
 					</div>
 					<br>
 					Arquivo: 
 					<br>
 					<div class="input-group mb-3">
-						<input type="file" name="foto"  class="form-control" id="inputGroupFile02"/>
+						<input type="file" name="foto"  class="form-control" id="inputGroupFile02" required/>
 						<label class="input-group-text" for="inputGroupFile02">Upload</label>
 					</div>
 					</br>
@@ -190,17 +190,18 @@
 						</p>
 					</div>
 					</br>
-					<input type="radio" name="autorizacao" value="sim" />
+					<input type="radio" name="autorizacao" value="sim" checked required/>
 					<label>Sim</label>
-					<input type="radio" name="autorizacao"  value="nao" />
+					<input type="radio" name="autorizacao"  value="nao" required/>
 					<label>Não</label>
 					</br>
 					<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="height: 55px">
 						<input type="submit" class="btn btn-outline-success"  value="Enviar" style="margin-right: 15px; height: 40px">
 						<a href="index.jsp"><input type="button" class="btn btn-outline-info"  style="height: 40px"  value="Voltar"></a>
 					</div>
+				</aside>	
+			
 			</form>
-			</aside>
 		</div>	
 	</div>
 	<br><br>
