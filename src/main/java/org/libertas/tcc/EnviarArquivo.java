@@ -31,6 +31,7 @@ public class EnviarArquivo extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String resposta="";
+		PrintWriter out = response.getWriter();
 		try {
 			
 		
@@ -38,9 +39,9 @@ public class EnviarArquivo extends HttpServlet {
 			Part filePart = request.getPart("foto");
 			String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 			
-			// define a pasta que ser� salva o  arquivo
-			String pasta = "D:\\Faculdade\\2021\\2Sem\\Ling Progr 2\\arquivos\\";
-			//String pasta = "/var/lib/tomcat9/webapps/arquivosGrupo1/";
+			// define a pasta que ser� salva o  arquivo
+			//String pasta = "D:\\Faculdade\\2021\\2Sem\\Ling Progr 2\\arquivos\\";
+			String pasta = "/var/lib/tomcat9/webapps/arquivosGrupo1/";
 			
 			int i = 1;
 			while(new File(pasta + fileName).exists()) {
@@ -90,21 +91,18 @@ public class EnviarArquivo extends HttpServlet {
 			TrabalhoDao tdao = new TrabalhoDao();
 			if (t.getId_trabalho()>0){
 				tdao.alterar(t);
-				resposta = "Registro Alterado com sucesso !!\r\n"
-						+ "	<br/>\r\n"
-						+ "	<a href=\"FormularioSubmissao.jsp\">Ok</a>";
+				out.print("<script>alert('Registro Alterado com sucesso...(Aguarde até que o Administrador aceite o trabalho !)');location.href='FormularioSubmissao.jsp';</script>");
 			} else {
 				tdao.inserir(t);
-				resposta = "Registro Inserido com sucesso !!\r\n"
-						+ "	<br/>\r\n"
-						+ "	<a href=\"FormularioSubmissao.jsp\">Ok</a>";
+				out.print("<script>alert('Registro Inserido com sucesso...(Aguarde até que o Administrador aceite o trabalho !)');location.href='FormularioSubmissao.jsp';</script>");
 			}
 			
 			
 			 
 		} catch (Exception e) {
 			e.printStackTrace();
-			resposta="falha ao salvar dados<br>"+e.getMessage();
+			//resposta="falha ao salvar dados<br>"+e.getMessage();
+			out.print("<script>alert('Falha ao salvar dados, tente novamente !');location.href='FormularioSubmissao.jsp';</script>"+e.getMessage());
 		}	
 		
 		try {

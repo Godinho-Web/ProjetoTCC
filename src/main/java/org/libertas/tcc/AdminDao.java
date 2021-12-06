@@ -25,7 +25,6 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(email);
 		return admin;
 	}
 }

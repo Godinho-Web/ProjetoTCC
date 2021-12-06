@@ -245,7 +245,7 @@ public class TrabalhoDao {
 					+ "WHERE (t.Titulo LIKE ? OR a.Nome LIKE ? OR p.Nome LIKE ? "
 					+ "OR c.Nome LIKE ? OR t.Resumo LIKE ? OR t.Palavras_chaves LIKE ?) "
 					+ "AND t.Validacao = 'Aprovado' AND t.Autorizacao = 'sim' "
-					+ "ORDER BY t.`Data` DESC";
+					+ "ORDER BY t.`Data` DESC LIMIT 5";
 			
 			PreparedStatement ps = con.getConexao().prepareStatement(sql);
 			ps.setString(1, "%" + pesquisa + "%");
@@ -291,7 +291,7 @@ public class TrabalhoDao {
 					+ "WHERE (t.Titulo LIKE ? OR a.Nome LIKE ? OR p.Nome LIKE ? "
 					+ "OR c.Nome LIKE ? OR t.Resumo LIKE ? OR t.Palavras_chaves LIKE ?) "
 					+ "AND t.Validacao IS NULL "
-					+ "ORDER BY t.Titulo";
+					+ "ORDER BY t.`Data` DESC";
 			
 			PreparedStatement ps = con.getConexao().prepareStatement(sql);
 			ps.setString(1, "%" + pesquisa + "%");
@@ -337,7 +337,7 @@ public class TrabalhoDao {
 					+ "t.id_aluno = a.id_aluno "
 					+ "WHERE t.Titulo LIKE ? OR a.Nome LIKE ? OR p.Nome LIKE ? "
 					+ "OR c.Nome LIKE ? OR t.Resumo LIKE ? OR t.Palavras_chaves LIKE ? "
-					+ "ORDER BY t.Titulo";
+					+ "ORDER BY t.`Data` DESC";
 			
 			PreparedStatement ps = con.getConexao().prepareStatement(sql);
 			ps.setString(1, "%" + pesquisa + "%");
